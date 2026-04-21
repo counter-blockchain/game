@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Counter-Blockchain</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="layout">
+    <section class="game-area">
+      <canvas id="game" width="960" height="540" aria-label="Counter-Blockchain FPS"></canvas>
+      <div id="crosshair" aria-hidden="true"></div>
+      <div class="hud">
+        <div>HP: <span id="hp">100</span></div>
+        <div>Патроны: <span id="ammo">24</span></div>
+        <div>Фраги: <span id="kills">0</span></div>
+        <div>Очки: <span id="points">0</span></div>
+        <div>Матч: <span id="timer">03:00</span></div>
+      </div>
+      <div id="messages"></div>
+    </section>
+
+    <aside class="panel">
+      <h1>Counter-Blockchain</h1>
+      <p>
+        MVP браузерного FPS от первого лица без регистрации: лёгкая графика,
+        физика, стрельба, боты и система очков.
+      </p>
+      <h2>Управление</h2>
+      <ul>
+        <li>WASD — движение</li>
+        <li>Мышь — обзор</li>
+        <li>ЛКМ — стрельба</li>
+        <li>Shift — бег</li>
+        <li>R — перезарядка</li>
+      </ul>
+      <button id="startBtn">Старт / Перезапуск</button>
+      <div class="wallet">
+        <h2>Личный кабинет (заглушка)</h2>
+        <p>Баланс матч-поинтов: <strong id="walletPoints">0</strong></p>
+        <button id="exchangeBtn">Обменять 1000 очков на 1 CBT (тест)</button>
+        <p id="walletInfo">Криптообмен пока симулируется локально.</p>
+      </div>
+    </aside>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>

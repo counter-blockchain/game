@@ -1,0 +1,120 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #0f1115;
+  color: #f3f5f7;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 1fr) 320px;
+  gap: 16px;
+  padding: 16px;
+}
+
+.game-area {
+  position: relative;
+  border: 1px solid #2f3542;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+}
+
+#game {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 16 / 9;
+  cursor: crosshair;
+}
+
+#crosshair {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+#crosshair::before,
+#crosshair::after {
+  content: "";
+  position: absolute;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+#crosshair::before {
+  width: 16px;
+  height: 2px;
+  top: 7px;
+  left: 0;
+}
+
+#crosshair::after {
+  width: 2px;
+  height: 16px;
+  left: 7px;
+  top: 0;
+}
+
+.hud {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 10px 12px;
+  border-radius: 8px;
+  display: grid;
+  gap: 4px;
+  font-size: 14px;
+}
+
+#messages {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  max-width: 70%;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 8px 10px;
+  border-radius: 8px;
+  min-height: 20px;
+}
+
+.panel {
+  border: 1px solid #2f3542;
+  border-radius: 12px;
+  padding: 16px;
+  background: #171a22;
+}
+
+button {
+  background: #4677ff;
+  border: 0;
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px 12px;
+  cursor: pointer;
+  margin: 8px 0;
+}
+
+button:hover {
+  background: #5d88ff;
+}
+
+.wallet {
+  margin-top: 20px;
+  border-top: 1px solid #2f3542;
+  padding-top: 10px;
+}
+
+@media (max-width: 1100px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
