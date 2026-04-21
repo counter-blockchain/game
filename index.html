@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Counter-Blockchain Online</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="layout">
+    <section class="game-area">
+      <canvas id="game" width="960" height="540"></canvas>
+      <div id="crosshair"></div>
+      <div class="hud">
+        <div>Сервер: <span id="serverState">offline</span></div>
+        <div>Комната: <span id="roomId">-</span></div>
+        <div>HP: <span id="hp">0</span></div>
+        <div>Патроны: <span id="ammo">0</span></div>
+        <div>Фраги: <span id="kills">0</span></div>
+        <div>Очки в матче: <span id="points">0</span></div>
+        <div>Игроков онлайн: <span id="online">0</span></div>
+        <div>Матч: <span id="timer">03:00</span></div>
+      </div>
+      <div id="messages"></div>
+    </section>
+
+    <aside class="panel">
+      <h1>Counter-Blockchain</h1>
+      <p>Сетевая версия: авторитетный сервер, матчи, очки и обмен на CBT.</p>
+
+      <label>Никнейм
+        <input id="nickname" maxlength="16" placeholder="Guest" />
+      </label>
+      <button id="connectBtn">Подключиться к матчу</button>
+
+      <h2>Управление</h2>
+      <ul>
+        <li>WASD — движение</li>
+        <li>Мышь — обзор</li>
+        <li>ЛКМ — стрельба</li>
+        <li>Shift — бег</li>
+        <li>R — перезарядка</li>
+      </ul>
+
+      <div class="wallet">
+        <h2>Кошелёк</h2>
+        <p>Баланс очков: <strong id="walletPoints">0</strong></p>
+        <p>Баланс CBT: <strong id="walletToken">0</strong></p>
+        <button id="exchangeBtn">Обменять 1000 очков на 1 CBT</button>
+        <p id="walletInfo">Обмен работает через backend API.</p>
+      </div>
+    </aside>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
